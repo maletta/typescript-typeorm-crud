@@ -1,0 +1,18 @@
+-------------CRIAR DADOS---------------
+yarn ts-node-dev ./src/scripts/insert-employee.ts
+yarn ts-node-dev ./src/scripts/insert-company.ts
+
+-------------SELECIONAR DADOS---------------
+yarn ts-node-dev ./src/scripts/select-employee.ts
+yarn ts-node-dev ./src/scripts/select-company.ts
+
+------------GERAR MIGRATIONS TABELAS---------
+npm run typeorm -- migration:generate ./src/database/migrations/Generate -d ./src/database/data-source.ts
+
+-------------EXECUTAR MIGRAIONS------------------
+npm run typeorm -- migration:run -d ./src/database/data-source.ts
+
+------------REVERTER MIGRAIONS TABELAS-------
+npm run typeorm -- migration:revert -d ./src/database/data-source.ts 
+
+----------------------------------------------------
